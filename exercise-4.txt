@@ -1,0 +1,5 @@
+// Exercise 4
+
+// Return the list of databases within MySQL
+
+    show databases;
