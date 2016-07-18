@@ -1,0 +1,17 @@
+// Exercise 7
+
+// Return list of tables within database decodemtl_addressbook
+    show tables;
+    
+    
+// Output:
+
++---------------------------------+
+| Tables_in_decodemtl_addressbook |
++---------------------------------+
+| account                         |
+| address_book                    |
+| entry                           |
++---------------------------------+
+3 rows in set (0.00 sec)
+
