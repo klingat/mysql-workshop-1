@@ -1,0 +1,5 @@
+// Exercise 6
+
+// Remove table Test for database decodemtl_addressbook
+    
+    drop table test;
