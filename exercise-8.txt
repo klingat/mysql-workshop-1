@@ -1,0 +1,81 @@
+// Exercise 8
+
+// Reflect the data model shown in schema/addressbook_denormalized.png within database decodemtl_addressbook
+
+// Account.id is a primary auto-increment key
+
+// AddressBook.id is a primary auto-increment key
+
+// Entry.id is a primary auto-increment key
+
+// Entry.type is an ENUM column permitting home, work and other
+
+// Entry.subtype is an ENUM column permitting phone, address and email
+
+
+CREATE TABLE account (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    email VARCHAR(255),
+    password VARCHAR(40),
+    created_on DATETIME,
+    modified_on DATETIME
+);
+
+mysql> show columns from account;
++-------------+--------------+------+-----+---------+----------------+
+| Field       | Type         | Null | Key | Default | Extra          |
++-------------+--------------+------+-----+---------+----------------+
+| id          | int(11)      | NO   | PRI | NULL    | auto_increment |
+| email       | varchar(255) | YES  |     | NULL    |                |
+| password    | varchar(40)  | YES  |     | NULL    |                |
+| created_on  | datetime     | YES  |     | NULL    |                |
+| modified_on | datetime     | YES  |     | NULL    |                |
++-------------+--------------+------+-----+---------+----------------+
+5 rows in set (0.00 sec)
+
+
+CREATE TABLE address_book (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    account_id INT AUTO_INCREMENT,
+    name VARCHAR(255),
+    created_on DATETIME,
+    modified_on DATETIME
+);
+
+mysql> show columns from address_book;
++-------------+--------------+------+-----+---------+----------------+
+| Field       | Type         | Null | Key | Default | Extra          |
++-------------+--------------+------+-----+---------+----------------+
+| id          | int(11)      | NO   | PRI | NULL    | auto_increment |
+| account_id  | int(11)      | YES  |     | NULL    |                |
+| name        | varchar(255) | YES  |     | NULL    |                |
+| created_on  | datetime     | YES  |     | NULL    |                |
+| modified_on | datetime     | YES  |     | NULL    |                |
++-------------+--------------+------+-----+---------+----------------+
+5 rows in set (0.00 sec)
+
+
+CREATE TABLE entry (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    address_book_id INT AUTO_INCREMENT,
+    first_name VARCHAR(255),
+    last_name VARCHAR(255),
+    birthday DATETIME,
+    type ENUM("home", "work", "other"),
+    subtype ENUM("phone", "address", "e-mail")
+);
+
+
+mysql> show columns from entry;
++-----------------+----------------------------------+------+-----+---------+----------------+
+| Field           | Type                             | Null | Key | Default | Extra          |
++-----------------+----------------------------------+------+-----+---------+----------------+
+| id              | int(11)                          | NO   | PRI | NULL    | auto_increment |
+| address_book_id | int(11)                          | YES  |     | NULL    |                |
+| first_name      | varchar(255)                     | YES  |     | NULL    |                |
+| last_name       | varchar(255)                     | YES  |     | NULL    |                |
+| birthday        | datetime                         | YES  |     | NULL    |                |
+| type            | enum('home','work','other')      | YES  |     | NULL    |                |
+| subtype         | enum('phone','address','e-mail') | YES  |     | NULL    |                |
++-----------------+----------------------------------+------+-----+---------+----------------+
+7 rows in set (0.00 sec)
