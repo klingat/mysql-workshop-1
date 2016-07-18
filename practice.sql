@@ -31,6 +31,22 @@ CREATE TABLE barn_with_chickens (
 );
 
 
+create table hotel_rooms (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    type_of_room ENUM("regular room", "suite", "penthouse", "janitor closet", "public laundry room", "gym"),
+    occupancy INT,
+    date_available DATETIME,
+    private_kitchen ENUM("yes", "no"),
+    number_of_windows INT,
+    carpet ENUM("yes", "no"),
+    rentable ENUM("yes", "no"),
+    comment VARCHAR(500)
+);
+
+insert hotel_rooms(type_of_room, occupancy, date_available, private_kitchen, number_of_windows, carpet, rentable, comment) values
+("regular room", 2, "2016-06-25", "no", 2, "yes", "yes", "1 queen bed");
+
+
 insert into barn_with_chickens(type, date_born) values
     ("chick", "2016-06-15"),
     ("chick", "2016-06-16"),
@@ -41,3 +57,10 @@ insert into barn_with_chickens(type, date_born) values
     ("chick", "2016-06-09"),
     ("chick", "2016-06-07");
 
+
+
++----+--------------+-----------+---------------------+-----------------+-------------------+--------+----------+-------------+
+| id | type_of_room | occupancy | date_available      | private_kitchen | number_of_windows | carpet | rentable | comment     |
++----+--------------+-----------+---------------------+-----------------+-------------------+--------+----------+-------------+
+|  1 | regular room |         2 | 2016-06-25 00:00:00 | no              |                 2 | yes    | yes      | 1 queen bed |
++----+--------------+-----------+---------------------+-----------------+-------------------+--------+----------+-------------+
