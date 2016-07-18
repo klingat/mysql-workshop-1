@@ -1,0 +1,46 @@
+// Exercise 9
+
+// Create a data model representing a Barn with Chickens
+
+// This model should provide answers to the following questions:
+
+// How many rooster, hen and chicks existed in the Barn on a specific date
+// How many chicks will come to age on a specific date
+
+// Creating table:
+    CREATE TABLE barn_with_chickens (
+        id INT AUTO_INCREMENT PRIMARY KEY,
+        type ENUM("rooster", "hen", "chick"),
+        date_born DATETIME
+    );
+    +-----------+-------------------------------+------+-----+---------+----------------+
+    | Field     | Type                          | Null | Key | Default | Extra          |
+    +-----------+-------------------------------+------+-----+---------+----------------+
+    | id        | int(11)                       | NO   | PRI | NULL    | auto_increment |
+    | type      | enum('rooster','hen','chick') | YES  |     | NULL    |                |
+    | date_born | datetime                      | YES  |     | NULL    |                |
+    +-----------+-------------------------------+------+-----+---------+----------------+
+    
+    
+    insert into barn_with_chickens(type, date_born) values
+    ("chick", "2016-06-15"),
+    ("chick", "2016-06-16"),
+    ("rooster", "2016-01-16"),
+    ("hen", "2016-01-28"),
+    ("hen", "2015-12-30"),
+    ("rooster", "2016-03-01"),
+    ("chick", "2016-06-09"),
+    ("chick", "2016-06-07");
+    
+    +----+---------+---------------------+
+    | id | type    | date_born           |
+    +----+---------+---------------------+
+    |  1 | chick   | 2016-06-15 00:00:00 |
+    |  2 | chick   | 2016-06-16 00:00:00 |
+    |  3 | rooster | 2016-01-16 00:00:00 |
+    |  4 | hen     | 2016-01-28 00:00:00 |
+    |  5 | hen     | 2015-12-30 00:00:00 |
+    |  6 | rooster | 2016-03-01 00:00:00 |
+    |  7 | chick   | 2016-06-09 00:00:00 |
+    |  8 | chick   | 2016-06-07 00:00:00 |
+    +----+---------+---------------------+

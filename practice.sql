@@ -24,3 +24,20 @@ CREATE TABLE entry (
     subtype ENUM("phone", "address", "e-mail")
 );
 
+CREATE TABLE barn_with_chickens (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    type ENUM("rooster", "hen", "chick"),
+    date_born DATETIME
+);
+
+
+insert into barn_with_chickens(type, date_born) values
+    ("chick", "2016-06-15"),
+    ("chick", "2016-06-16"),
+    ("rooster", "2016-01-16"),
+    ("hen", "2016-01-28"),
+    ("hen", "2015-12-30"),
+    ("rooster", "2016-03-01"),
+    ("chick", "2016-06-09"),
+    ("chick", "2016-06-07");
+
