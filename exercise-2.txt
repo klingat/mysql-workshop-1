@@ -1,0 +1,7 @@
+// Create a database named decodemtl_test within MySQL
+
+    create database decodemtl_test;
+
+// Create a database named decodemtl_addressbook within MySQL
+
+    create database decodemtl_addressbook;
