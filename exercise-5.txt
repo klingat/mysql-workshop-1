@@ -1,0 +1,19 @@
+// Exercise 5
+
+// Create table Account for database decodemtl_addressbook
+
+    use decodemtl_addressbook;
+    create table account(some_data varchar(50));
+
+// Create table AddressBook for database decodemtl_addressbook
+   
+    create table address_book(some_data varchar(50));
+
+// Create table Entry for database decodemtl_addressbook
+    
+    create table entry(some_data varchar(50));
+
+// Create table Test for database decodemtl_addressbook
+    
+    create table test(some_data varchar(50));
+
